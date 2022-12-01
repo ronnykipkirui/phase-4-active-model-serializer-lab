@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     render json: post
   end
 
+  def tags
+    post = Post.find_by(params[:id])
+    render json: post.tags
+  end
   private
 
   def render_not_found_response
